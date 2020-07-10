@@ -11,6 +11,6 @@ public class StartButton: MonoBehaviour
 	private void Start()
 	{
 		start = gameObject.GetComponent<Button>();
-		start.onClick.AddListener(() => ll.LoadLevel(2)); 
+		start.onClick.AddListener(() => ll.LoadLevel(2));
 	}
 }
