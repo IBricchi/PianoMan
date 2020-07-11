@@ -7,6 +7,13 @@ public enum music
 	explode
 }
 
+public enum LevelEndDir
+{
+	up,
+	stay,
+	down
+}
+
 public struct songs
 {
 	public static string Get(music id)
