@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1941797667182244164}
   - component: {fileID: 3473710909467348658}
   - component: {fileID: 3141922513567500280}
+  - component: {fileID: 3206028656704948629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -234,6 +235,20 @@ MonoBehaviour:
   maxOutOfControlTime: 10
   fieldRadiusIncrease: 2
   fieldRadiusDecrease: 5
+--- !u!114 &3206028656704948629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941797667182244165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fa7a5ea84f37f4d9f0d526fbcdad30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  player: 1
 --- !u!1 &1941797667834254475
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +713,7 @@ GameObject:
   - component: {fileID: 2598585062987610154}
   - component: {fileID: 6157621517311711401}
   - component: {fileID: 1095734854024003701}
+  - component: {fileID: 3191954111401393557}
   m_Layer: 0
   m_Name: MusicField
   m_TagString: Untagged
@@ -781,6 +797,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3d95b2187a98c48a73af04c5ad91c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &3191954111401393557
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325549085206963519}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &3942567081253386548
 GameObject:
   m_ObjectHideFlags: 0

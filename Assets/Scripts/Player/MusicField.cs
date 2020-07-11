@@ -14,7 +14,7 @@ public class MusicField: MonoBehaviour
 	{
 		if(collision.gameObject.CompareTag("Enemy"))
 		{
-			collision.gameObject.GetComponent<EnemyControl>().Convert(attackID);
+			collision.gameObject.GetComponentInParent<EnemyControl>().Convert(attackID);
 		}
 	}
 }

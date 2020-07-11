@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3072128723323317952}
   - component: {fileID: 3072128723323317953}
   - component: {fileID: 3072128723323317966}
+  - component: {fileID: 3885826710763250342}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,12 +85,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicID: 0
-  player: {fileID: 0}
-  settings: {fileID: 0}
+  myHealth: {fileID: 3885826710763250342}
   viewingArea: {fileID: 3072128723323317953}
   viewingRadius: 5
   rb: {fileID: 3072128723323317952}
   speed: 100
+  followDamage: 1
+--- !u!114 &3885826710763250342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072128723323317967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fa7a5ea84f37f4d9f0d526fbcdad30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  player: 0
 --- !u!1 &3072128724617959982
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,9 +116,10 @@ GameObject:
   - component: {fileID: 3072128724617959969}
   - component: {fileID: 3072128724617959971}
   - component: {fileID: 3072128724617959968}
+  - component: {fileID: 2991432858514658979}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,3 +223,16 @@ PolygonCollider2D:
       - {x: -0.0625, y: 0.03125}
       - {x: -0.03125, y: 0}
       - {x: -0.0625, y: 0}
+--- !u!114 &2991432858514658979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072128724617959982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a241e78dcdf32745adf6cd03d5fe899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ec: {fileID: 3072128723323317966}
