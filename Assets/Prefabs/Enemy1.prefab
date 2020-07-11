@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   player: 0
+  enemyDeath: {fileID: 7959303546451902341, guid: f13e997b69c124d4f9dbff6345c57d4e,
+    type: 3}
 --- !u!1 &3072128724617959982
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ public class Health: MonoBehaviour
 	public float health = 10f;
 	public bool player;
 
+	public GameObject enemyDeath;
+
 	private void FixedUpdate()
 	{
 		if(health <= 0)
@@ -33,6 +35,7 @@ public class Health: MonoBehaviour
 
 	public void EnemyDie()
 	{
-
+		Instantiate(enemyDeath, transform.position, transform.rotation);
+		GameObject.Destroy(gameObject);
 	}
 }
