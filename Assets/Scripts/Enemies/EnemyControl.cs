@@ -8,8 +8,10 @@ public class EnemyControl: MonoBehaviour
 	public music musicID;
 
 	//variables for all
-	public GameObject player;
+	private GameObject target;
 	public Settings settings;
+	private bool converted = false;
+	private music convertedID = music.none;
 
 	public CircleCollider2D viewingArea;
 	public float viewingRadius = 5f;
@@ -21,7 +23,7 @@ public class EnemyControl: MonoBehaviour
 	//variables for none
 
 	//variables for follow
-	private bool playerFound = false;
+	private bool targetFound = false;
 	public float speed = 100f;
 
 	//variables for explode
@@ -83,9 +85,9 @@ public class EnemyControl: MonoBehaviour
 	}
 	private void ControlFollow()
 	{
-		if(playerFound)
+		if(targetFound)
 		{
-			dir = player.transform.position - transform.position;
+			dir = target.transform.position - transform.position;
 			dir = Vector2.ClampMagnitude(dir, 1);
 			rb.velocity = dir * speed * Time.fixedDeltaTime;
 		}
@@ -112,9 +114,19 @@ public class EnemyControl: MonoBehaviour
 	}
 	private void TriggerFollow(Collider2D collision)
 	{
-		if(collision.gameObject.CompareTag("Player"))
+		if ((!converted && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Converted"))) || (converted && (collision.gameObject.CompareTag("Converted") || collision.gameObject.CompareTag("Enemy"))))
 		{
-			playerFound = true;
+			target = collision.gameObject;
+			targetFound = true;
+		}
+	}
+
+	public void Convert(music id)
+	{
+		if(id != musicID)
+		{
+			converted = true;
+			convertedID = id;
 		}
 	}
 }

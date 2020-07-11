@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1141309345749926282}
   m_Layer: 0
   m_Name: Settings
-  m_TagString: Untagged
+  m_TagString: Settings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMusicId: 1
   player: {fileID: 0}
+  hasSong1: 0
+  hasSong2: 0
+  hasSong3: 0

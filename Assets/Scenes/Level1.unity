@@ -1113,6 +1113,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2119746289 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1141309345749926282, guid: ae68aef8f1d461e4da9baddddcba978e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141309347033670737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02262cdfd99a8c948955a99f969689e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1141309347033670737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1130,6 +1142,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 440084753}
+    - target: {fileID: 1141309345749926282, guid: ae68aef8f1d461e4da9baddddcba978e,
+        type: 3}
+      propertyPath: levelMusicId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1141309345749926283, guid: ae68aef8f1d461e4da9baddddcba978e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1202,12 +1219,12 @@ PrefabInstance:
     - target: {fileID: 1941797667182244166, guid: 304783d819a54f0418f3bc8a49785941,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.7
+      value: 53.96
       objectReference: {fileID: 0}
     - target: {fileID: 1941797667182244166, guid: 304783d819a54f0418f3bc8a49785941,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 1941797667182244166, guid: 304783d819a54f0418f3bc8a49785941,
         type: 3}
@@ -1328,6 +1345,11 @@ PrefabInstance:
       propertyPath: ll
       value: 
       objectReference: {fileID: 170322041}
+    - target: {fileID: 5428368321872069219, guid: 2a3932837b04dad448739149478692c8,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 2119746289}
     - target: {fileID: 6660285997207099839, guid: 2a3932837b04dad448739149478692c8,
         type: 3}
       propertyPath: m_Name

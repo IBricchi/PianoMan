@@ -15,9 +15,9 @@ public class Settings: MonoBehaviour
 		pm = player.GetComponentInChildren<PlayMusic>();
 		pm.ChangeClip(levelMusicId);
 
-		hasSong1 = PlayerPrefs.HasKey("Song1");
-		hasSong2 = PlayerPrefs.HasKey("Song2");
-		hasSong3 = PlayerPrefs.HasKey("Song3");
+		hasSong1 = PlayerPrefs.GetInt("Song1") != (int)music.none;
+		hasSong2 = PlayerPrefs.GetInt("Song2") != (int)music.none;
+		hasSong3 = PlayerPrefs.GetInt("Song3") != (int)music.none;
 
 		if (hasSong1) currentSongIn1 = PlayerPrefs.GetInt("Song1") == (int)levelMusicId;
 		if (hasSong2) currentSongIn2 = PlayerPrefs.GetInt("Song2") == (int)levelMusicId;
