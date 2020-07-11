@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7915680728857398519}
   m_Layer: 0
   m_Name: LevelLoader
-  m_TagString: Untagged
+  m_TagString: LevelLoader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 7915680729116800297}
-  tranistionTime: 1
+  tranistionTime: 0.5
 --- !u!1 &7915680729116800276
 GameObject:
   m_ObjectHideFlags: 0

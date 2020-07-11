@@ -69,11 +69,33 @@ public class Movement : MonoBehaviour
 	public void TakeControl()
 	{
 		hasControl = false;
+		isSitting = true;
+		rb.velocity = Vector2.zero;
+		anim.SetFloat("speed", 0);
 		anim.SetTrigger("sit");
+
+		for(int i = 0; i < gameObject.transform.childCount; i++)
+		{
+			GameObject child = gameObject.transform.GetChild(i).gameObject;
+			if(child.CompareTag("Player"))
+			{
+				SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+				sr.color = new Color(0.5943396f, 0.5943396f, 0.5943396f, 0.8f);
+			}
+		}
 	}
 
 	public void GiveControl()
 	{
 		hasControl = true;
+		for (int i = 0; i < gameObject.transform.childCount; i++)
+		{
+			GameObject child = gameObject.transform.GetChild(i).gameObject;
+			if (child.CompareTag("Player"))
+			{
+				SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+				sr.color = new Color(1f, 1f, 1f, 1f);
+			}
+		}
 	}
 }

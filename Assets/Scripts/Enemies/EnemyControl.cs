@@ -101,7 +101,7 @@ public class EnemyControl: MonoBehaviour
 
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		switch (musicID)
 		{
@@ -154,7 +154,7 @@ public class EnemyControl: MonoBehaviour
 
 	public void PhysicalCollisionFollow(Collision2D collision)
 	{
-		bool playerCollision = ((collision.gameObject.transform.childCount > 0) ? collision.gameObject.transform.GetChild(0).CompareTag("Player"):false);
+		bool playerCollision = ((collision.gameObject.transform.childCount > 2) ? collision.gameObject.transform.GetChild(1).CompareTag("Player"):false);
 		bool convertedCollision = ((collision.gameObject.transform.childCount > 0) ? collision.gameObject.transform.GetChild(0).CompareTag("Converted") : false);
 		bool enemyCollision = ((collision.gameObject.transform.childCount > 0) ? collision.gameObject.transform.GetChild(0).CompareTag("Enemy") : false);
 		if (targetFound && ((!converted && (playerCollision || convertedCollision)) || (converted && (convertedCollision || enemyCollision))))

@@ -248,6 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  deathParticles: {fileID: 1085948868343350508, guid: 8f8c97a897b739049b428c30548b9273,
+    type: 3}
   player: 1
 --- !u!1 &1941797667834254475
 GameObject:
@@ -998,7 +1000,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5ad01b15adbe6d342b235c4d3247f056, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

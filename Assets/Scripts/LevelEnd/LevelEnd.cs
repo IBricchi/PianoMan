@@ -4,7 +4,12 @@ using System.Collections;
 public class LevelEnd: MonoBehaviour
 {
 	public LevelLoader ll;
-	public Settings settings;
+	private Settings settings;
+
+	private void Awake()
+	{
+		settings = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>();
+	}
 
 	public void Collected(LevelEndDir dir)
 	{

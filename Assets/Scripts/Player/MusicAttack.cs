@@ -86,11 +86,14 @@ public class MusicAttack: MonoBehaviour
 
 	private void StartAttack(music id)
 	{
-		TakeControl();
-		attacking = true;
-		attackID = id;
-		pm.ChangeClip(id);
-		mf.SetFieldType(attackID);
+		if (id != music.none)
+		{
+			attackID = id;
+			TakeControl();
+			attacking = true;
+			pm.ChangeClip(id);
+			mf.SetFieldType(attackID);
+		}
 	}
 	private void TakeControl()
 	{
@@ -109,6 +112,7 @@ public class MusicAttack: MonoBehaviour
 			musicField.transform.localScale = Vector2.one * fieldRadius;
 		}
 	}
+
 	private void EndAttackAnimation()
 	{
 		if(fieldRadius > 0)

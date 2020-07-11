@@ -4,9 +4,10 @@ using System.Collections;
 public class Health: MonoBehaviour
 {
 	public float health = 10f;
-	public bool player;
 
-	public GameObject enemyDeath;
+	public GameObject deathParticles;
+
+	public bool player = false;
 
 	private void FixedUpdate()
 	{
@@ -30,12 +31,22 @@ public class Health: MonoBehaviour
 
 	public void PlayerDie()
 	{
-
+		Instantiate(deathParticles, transform.position, transform.rotation);
+		for (int i = 0; i < gameObject.transform.childCount; i++)
+		{
+			GameObject child = gameObject.transform.GetChild(i).gameObject;
+			if (child.CompareTag("Player"))
+			{
+				GameObject.Destroy(child);
+			}
+			Component.Destroy(gameObject.GetComponent<Movement>());
+			Component.Destroy(gameObject.GetComponent<MusicAttack>());
+			Component.Destroy(gameObject.GetComponent<Health>());
+		}
 	}
-
 	public void EnemyDie()
 	{
-		Instantiate(enemyDeath, transform.position, transform.rotation);
+		Instantiate(deathParticles, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}
 }

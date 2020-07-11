@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Converted
   - Settings
+  - LevelLoader
   layers:
   - Default
   - TransparentFX
