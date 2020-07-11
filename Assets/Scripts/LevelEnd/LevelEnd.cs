@@ -4,6 +4,7 @@ using System.Collections;
 public class LevelEnd: MonoBehaviour
 {
 	public LevelLoader ll;
+	public Settings settings;
 
 	public void Collected(LevelEndDir dir)
 	{
@@ -19,6 +20,7 @@ public class LevelEnd: MonoBehaviour
 				break;
 		}
 
+		settings.SaveSong();
 		ll.LoadNextLevel();
 	}
 }
