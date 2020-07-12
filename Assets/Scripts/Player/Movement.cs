@@ -74,6 +74,8 @@ public class Movement : MonoBehaviour
 		anim.SetFloat("speed", 0);
 		anim.SetTrigger("sit");
 
+		rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
 		for(int i = 0; i < gameObject.transform.childCount; i++)
 		{
 			GameObject child = gameObject.transform.GetChild(i).gameObject;
@@ -88,6 +90,9 @@ public class Movement : MonoBehaviour
 	public void GiveControl()
 	{
 		hasControl = true;
+
+		rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
 		for (int i = 0; i < gameObject.transform.childCount; i++)
 		{
 			GameObject child = gameObject.transform.GetChild(i).gameObject;

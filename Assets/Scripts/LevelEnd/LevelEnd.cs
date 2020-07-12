@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LevelEnd: MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class LevelEnd: MonoBehaviour
 		}
 
 		settings.SaveSong();
+		PlayerPrefs.SetInt("NL", SceneManager.GetActiveScene().buildIndex + 1);
 		ll.LoadNextLevel();
 	}
 }

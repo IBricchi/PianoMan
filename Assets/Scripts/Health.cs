@@ -42,6 +42,7 @@ public class Health: MonoBehaviour
 			Component.Destroy(gameObject.GetComponent<Movement>());
 			Component.Destroy(gameObject.GetComponent<MusicAttack>());
 			Component.Destroy(gameObject.GetComponent<Health>());
+			gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		}
 	}
 	public void EnemyDie()
