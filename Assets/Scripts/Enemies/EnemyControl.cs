@@ -16,7 +16,6 @@ public class EnemyControl: MonoBehaviour
 	public Sprite convertedSprite;
 
 	public CircleCollider2D viewingArea;
-	public float viewingRadius = 5f;
 	
 	public Rigidbody2D rb;
 
@@ -28,8 +27,17 @@ public class EnemyControl: MonoBehaviour
 	private bool targetFound = false;
 	public float speed = 100f;
 	public float followDamage = 1f;
+	public float viewingRadius = 10f;
 
 	//variables for explode
+	public float startCountdownRadius = 10f;
+	public float maxDamageRadius = 8f;
+	private float maxAttackDamage = 5f;
+	public float maxCountDown = 4f;
+	private float countDownTime = 0f;
+	private bool readyToExplode = false;
+	private bool exploding = false;
+	public GameObject explosionParticles;
 
 	private void Start()
 	{
@@ -63,7 +71,10 @@ public class EnemyControl: MonoBehaviour
 	}
 	private void StartExplode()
 	{
-
+		myHealth.health = 1f;
+		viewingArea.radius = startCountdownRadius;
+		countDownTime = 0f;
+		myHealth.deathParticles = explosionParticles;
 	}
 
 	private void FixedUpdate()
@@ -103,7 +114,30 @@ public class EnemyControl: MonoBehaviour
 	}
 	private void ControlExplode()
 	{
-
+		if(readyToExplode)
+		{
+			countDownTime += Time.fixedDeltaTime;
+			if(countDownTime >= maxCountDown)
+			{
+				exploding = true;
+			}
+		}
+		if(exploding)
+		{
+			Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, maxDamageRadius);
+			foreach(Collider2D collision in hitColliders)
+			{
+				bool playerCollision = collision.gameObject.CompareTag("Player");
+				bool convertedCollision = collision.gameObject.CompareTag("Converted");
+				bool enemyCollision = collision.gameObject.CompareTag("Enemy");
+				if(playerCollision || convertedCollision || enemyCollision)
+				{
+					Health h = collision.gameObject.GetComponentInParent<Health>();
+					h.DealDamage(maxAttackDamage);
+					myHealth.EnemyDie();
+				}
+			}
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
@@ -116,6 +150,7 @@ public class EnemyControl: MonoBehaviour
 				TriggerFollow(collision);
 				break;
 			case music.explode:
+				TriggerExplode(collision);
 				break;
 			default:
 				break;
@@ -132,10 +167,21 @@ public class EnemyControl: MonoBehaviour
 			targetFound = true;
 		}
 	}
+	private void TriggerExplode(Collider2D collision)
+	{
+		bool playerCollision = collision.gameObject.CompareTag("Player");
+		bool convertedCollision = collision.gameObject.CompareTag("Converted");
+		bool enemyCollision = collision.gameObject.CompareTag("Enemy");
+		if ((!readyToExplode && !exploding) && ((!converted && (playerCollision || convertedCollision)) || (converted && (convertedCollision || enemyCollision))))
+		{
+			readyToExplode = true;
+		}
+	}
 
 	public void Convert(music id)
 	{
 		targetFound = false;
+		readyToExplode = false;
 		converted = true;
 		gameObject.transform.GetChild(0).tag = "Converted";
 		convertedID = id;

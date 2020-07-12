@@ -7,6 +7,14 @@ public class LevelLoader: MonoBehaviour
 	public Animator transition;
 	public float tranistionTime = 1f;
 
+	private void Update()
+	{
+		if (Input.GetKey("escape"))
+		{
+			Application.Quit();
+		}
+	}
+
 	public void LoadLevel(int levelIndex)
 	{
 		StartCoroutine(LoadLevelCR(levelIndex));

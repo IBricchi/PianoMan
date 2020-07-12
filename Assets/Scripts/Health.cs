@@ -42,6 +42,7 @@ public class Health: MonoBehaviour
 
 	private void ShowPlayerHealth()
 	{
+		if (health < 0) health = 0;
 		for(int i = startHealthLook; i < maxHealth - health; i++)
 		{
 			Color newColor = healthBar.transform.GetChild(i).gameObject.GetComponent<Image>().color;

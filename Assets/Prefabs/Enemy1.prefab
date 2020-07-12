@@ -88,10 +88,15 @@ MonoBehaviour:
   myHealth: {fileID: 3885826710763250342}
   convertedSprite: {fileID: 21300000, guid: b16567b734791e143b5277e0e0eae7c1, type: 3}
   viewingArea: {fileID: 3072128723323317953}
-  viewingRadius: 10
   rb: {fileID: 3072128723323317952}
   speed: 100
   followDamage: 1
+  viewingRadius: 10
+  startCountdownRadius: 10
+  maxDamageRadius: 8
+  maxCountDown: 4
+  explosionParticles: {fileID: 4779179649446882486, guid: fac9a9b421f048742a9bffc41b8397a6,
+    type: 3}
 --- !u!114 &3885826710763250342
 MonoBehaviour:
   m_ObjectHideFlags: 0
