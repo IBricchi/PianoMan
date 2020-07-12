@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicID: 0
   myHealth: {fileID: 3885826710763250342}
+  convertedSprite: {fileID: 21300000, guid: b16567b734791e143b5277e0e0eae7c1, type: 3}
   viewingArea: {fileID: 3072128723323317953}
   viewingRadius: 10
   rb: {fileID: 3072128723323317952}

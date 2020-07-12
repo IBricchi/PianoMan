@@ -13,6 +13,7 @@ public class EnemyControl: MonoBehaviour
 	private bool converted = false;
 	private music convertedID = music.none;
 	public Health myHealth;
+	public Sprite convertedSprite;
 
 	public CircleCollider2D viewingArea;
 	public float viewingRadius = 5f;
@@ -138,6 +139,7 @@ public class EnemyControl: MonoBehaviour
 		converted = true;
 		gameObject.transform.GetChild(0).tag = "Converted";
 		convertedID = id;
+		gameObject.GetComponentInChildren<SpriteRenderer>().sprite = convertedSprite;
 
 		musicID = id;
 
