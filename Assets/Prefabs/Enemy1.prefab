@@ -87,7 +87,7 @@ MonoBehaviour:
   musicID: 0
   myHealth: {fileID: 3885826710763250342}
   viewingArea: {fileID: 3072128723323317953}
-  viewingRadius: 5
+  viewingRadius: 10
   rb: {fileID: 3072128723323317952}
   speed: 100
   followDamage: 1
@@ -104,8 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  maxHealth: 0
   deathParticles: {fileID: 7959303546451902341, guid: f13e997b69c124d4f9dbff6345c57d4e,
     type: 3}
+  healthBar: {fileID: 0}
   player: 0
 --- !u!1 &3072128724617959982
 GameObject:

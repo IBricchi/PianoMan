@@ -380,10 +380,11 @@ MonoBehaviour:
   attackID1: 0
   attackID2: 0
   attackID3: 0
-  maxAttackingTime: 10
+  maxAttackingTime: 5
   maxOutOfControlTime: 10
   fieldRadiusIncrease: 2
   fieldRadiusDecrease: 5
+  maxFieldRadius: 7
 --- !u!114 &3206028656704948629
 MonoBehaviour:
   m_ObjectHideFlags: 0

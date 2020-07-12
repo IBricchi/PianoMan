@@ -26,7 +26,7 @@ public class MusicAttack: MonoBehaviour
 	public float fieldRadiusIncrease = 2f;
 	public float fieldRadiusDecrease = 5f;
 	private float fieldRadius = 0f;
-	private float maxFieldRadius = 10;
+Alo	public float maxFieldRadius = 7;
 
 	private void Awake()
 	{
@@ -53,6 +53,7 @@ public class MusicAttack: MonoBehaviour
 				attacking = false;
 				attackingTime = 0f;
 				outOfControl = true;
+				pm.ChangeClip(settings.levelMusicId);
 			}
 		}
 		else if(outOfControl)
@@ -64,7 +65,6 @@ public class MusicAttack: MonoBehaviour
 				outOfControl = false;
 				outOfControlTime = 0f;
 				GiveControl();
-				pm.ChangeClip(settings.levelMusicId);
 			}
 		}
 		else
