@@ -138,6 +138,24 @@ public class EnemyControl: MonoBehaviour
 		converted = true;
 		gameObject.transform.GetChild(0).tag = "Converted";
 		convertedID = id;
+
+		musicID = id;
+
+		switch (musicID)
+		{
+			case music.none:
+				StartNone();
+				break;
+			case music.follow:
+				StartFollow();
+				break;
+			case music.explode:
+				StartExplode();
+				break;
+			default:
+				StartNone();
+				break;
+		}
 	}
 
 	public void PhysicalCollision(Collision2D collision)
@@ -164,7 +182,7 @@ public class EnemyControl: MonoBehaviour
 		
 		if (targetFound && ((!converted && (playerCollision || convertedCollision)) || (converted && (convertedCollision || enemyCollision))))
 		{
-			Health h = target.GetComponentInParent	<Health>();
+			Health h = collision.gameObject.GetComponentInParent<Health>();
 			h.DealDamage(followDamage);
 			myHealth.EnemyDie();
 		}

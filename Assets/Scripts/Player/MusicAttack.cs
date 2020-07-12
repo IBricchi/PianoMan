@@ -26,7 +26,7 @@ public class MusicAttack: MonoBehaviour
 	public float fieldRadiusIncrease = 2f;
 	public float fieldRadiusDecrease = 5f;
 	private float fieldRadius = 0f;
-Alo	public float maxFieldRadius = 7;
+	public float maxFieldRadius = 7;
 
 	private void Awake()
 	{
