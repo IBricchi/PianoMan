@@ -89,6 +89,10 @@ public class EnemyControl: MonoBehaviour
 	}
 	private void ControlFollow()
 	{
+		if(target == null)
+		{
+			targetFound = false;
+		}
 		if(targetFound)
 		{
 			dir = target.transform.position - transform.position;
@@ -157,9 +161,9 @@ public class EnemyControl: MonoBehaviour
 		bool playerCollision = ((collision.gameObject.transform.childCount > 2) ? collision.gameObject.transform.GetChild(1).CompareTag("Player"):false);
 		bool convertedCollision = ((collision.gameObject.transform.childCount > 0) ? collision.gameObject.transform.GetChild(0).CompareTag("Converted") : false);
 		bool enemyCollision = ((collision.gameObject.transform.childCount > 0) ? collision.gameObject.transform.GetChild(0).CompareTag("Enemy") : false);
+		
 		if (targetFound && ((!converted && (playerCollision || convertedCollision)) || (converted && (convertedCollision || enemyCollision))))
 		{
-			Debug.Log(collision.gameObject.tag);
 			Health h = target.GetComponentInParent	<Health>();
 			h.DealDamage(followDamage);
 			myHealth.EnemyDie();

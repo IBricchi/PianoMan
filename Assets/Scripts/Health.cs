@@ -1,16 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Health: MonoBehaviour
 {
 	public float health = 10f;
+	public float maxHealth;
 
 	public GameObject deathParticles;
+	public GameObject healthBar;
 
 	public bool player = false;
 
+	private int startHealthLook = 0;
+
+	private void Awake()
+	{
+		maxHealth = health;
+	}
+
 	private void FixedUpdate()
 	{
+		if(player) ShowPlayerHealth();
 		if(health <= 0)
 		{
 			if (player)
@@ -29,6 +40,16 @@ public class Health: MonoBehaviour
 		health -= damage;
 	}
 
+	private void ShowPlayerHealth()
+	{
+		for(int i = startHealthLook; i < maxHealth - health; i++)
+		{
+			Color newColor = healthBar.transform.GetChild(i).gameObject.GetComponent<Image>().color;
+			newColor.a = 0;
+			healthBar.transform.GetChild(i).gameObject.GetComponent<Image>().color = newColor;
+			startHealthLook = (int) (maxHealth - health);
+		}
+	}
 	public void PlayerDie()
 	{
 		Instantiate(deathParticles, transform.position, transform.rotation);
